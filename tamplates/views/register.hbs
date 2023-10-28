@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <style>
+    body{
+      overflow: hidden;
+    }
+  </style>
+{{>header}}
+<body>
+  
+  
+    {{>navbar}}
+
+    <h1 class="reg-head">Registration Page</h1>
+    
+   <form name="myForm" class="row g-3 reg-form" method="POST" action="register"  onsubmit="return validateForm()">
+    
+  <div class="col-md-12">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" name = "name" id="name">
+  </div>
+  <div class="col-md-12">
+    <label for="contact" class="form-label">Contact number</label>
+    <input type="number" class="form-control" name="contact"  id="contact">
+  </div>
+  <div class="col-md-12">
+    <label for="aadharcard" class="form-label">Aadhar Card Number</label>
+    <input type="number" class="form-control" name = "aadhar" id="aadharcard">
+  </div>
+  <div class="col-md-6">
+    <label for="password" class="form-label">Password</label>
+    <input type="password" class="form-control" name = "password" id="password">
+  </div>
+  <div class="col-md-6">
+    <label for="cpassword" class="form-label">Confirm Password</label>
+    <input type="password" class="form-control" name = "cpassword" id="cpassword">
+  </div>
+  <div class="col-md-12">
+    <label for="gender" class="form-label">Status</label>
+    &nbsp; &nbsp; &nbsp; &nbsp;
+    <label class="radio inline">
+      <input type="radio" name="status" value="voter" checked>
+      <span>Voter</span>
+    </label>
+    <label class="radio inline">
+      <input type="radio" name="status" value="admin" >
+      <span>Admin</span>
+    </label>
+  </div>
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Next</button>
+  </div>
+  
+</form>
+<script>
+//form validation 
+function validateForm() {
+  let x = document.forms["myForm"]["name"].value;
+  let phone = document.forms["myForm"]["contact"].value;
+  let aadhar = document.forms["myForm"]["aadhar"].value;
+  let password = document.forms["myForm"]["password"].value;
+  let cpassword = document.forms["myForm"]["cpassword"].value;
+
+  var expra = /^([0-9]{4}[0-9]{4}[0-9]{4}$)|([0-9]{4}\s[0-9]{4}\s[0-9]{4}$)|([0-9]{4}-[0-9]{4}-[0-9]{4}$)/;
+       
+   var exprp = /^(0|91)?[6-9][0-9]{9}$/;
+  if (x == "") {
+    alert("Name must be filled out");
+    return false;
+  }
+ 
+  else if (!exprp.test(phone)) {
+    alert("invalid phone number");
+    return false;
+  }
+  
+  else if (!expra.test(aadhar)) {
+      alert("invalid aadhar number");
+      return false;
+  }
+  else if(password!=cpassword){
+    alert("password and confirm password doesn't match");
+    return false;
+  }
+  else if(password == "") {  
+       alert("please fill the password");
+      return false;  
+    }  
+     
+    else if(cpassword == "") {  
+       alert("please fill the confirm password"); 
+      return false;  
+    }   
+     
+      
+    else if(password.length < 6) {  
+      alert("password must contain atleast 6 character "); 
+      return false;  
+    }  
+  
+    //maximum length of password validation  
+    else if(password.length > 15) {  
+      alert("**Password length must not exceed 15 characters");  
+      return false;  
+    }  
+  
+}
+</script>
+</body>
+</html>

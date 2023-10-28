@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header}}
+<body>
+    {{>navbar}}
+
+    <a href="newcandidate"><button style="margin: 10px 0 0px 10px;"  type="button" class="btn btn-primary btn-lg">Add New Candidate</button></a>
+    
+    <div class="container"><br>
+<h2 class="text-center">Candidate List</h2><br>
+<table class="table table-dark table-striped">
+	<thead>
+	<tr>
+		<th>Sno.</th>
+    <th>Logo</th>
+		<th>Name</th>
+		<th>Contact Number</th>
+		<th>Aadhar Card Number</th>
+    <th>No of votes</th>
+	</tr>
+	</thead>
+  {{#each candidates}}
+  {{var i=0}}
+  <tbody>
+    <tr>
+		<td>{{@index}}</td>
+    <td><img src="data:image/jpeg;base64,{{this.logo}}" alt="Logo"></td>
+		<td>{{this.name}}</td>
+		<td>{{this.contact}}</td>
+		<td>{{this.aadhar}}</td>
+    <td>{{this.totalvote}}</td>
+	</tr>
+	</tbody>
+  {{/each}}
+
+</div>
+    
+</body>
+</html>
+

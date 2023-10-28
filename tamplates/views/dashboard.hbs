@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en"> 
+{{>header}}
+
+<body>
+    {{> navbar}} <br>
+    <h4 class="text-center">Welcome {{user.name}}</h4>
+    <div class="vhori">
+
+    {{#each candidates}}
+     
+    <div class="vhor card" style="width: 18rem;">
+         {{!-- <img
+            src="data:{{this}}/<%={{this}}.img.contentType%>;base64,
+                    <%={{this}}.img.data.toString('base64')%>"
+          /> --}}
+        <div class="card-body">
+
+        <h5 class="card-title">{{this.name}}</h5>
+        
+        <h5 class="card-text">{{this.totalvote}}</h5>
+        {{#if ../user.vstatus}}
+        <a id="vote-button btn btn-primary" disabled="disabled">Voted</a>
+        {{else}}
+        <button class="updatevote-btn btn btn-primary" data-username="{{../user.name}}" data-usercontact="{{../user.contact}}"
+            data-candidatename="{{this.name}}" data-candidatevote="{{this.totalvote}}">Vote</button>
+        {{/if}}
+        </div>
+    </div>
+    
+</div>
+    {{/each}}
+    </div>
+
+
+   
+</body>
+ <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+        
+        const voteButtons = document.getElementsByClassName('updatevote-btn');
+    Array.from(voteButtons).forEach(button => {
+        button.addEventListener('click', function () {
+            console.log("Button clicked");
+            const username = this.dataset.username;
+            const usercontact = this.dataset.usercontact;
+            const candidatename = this.dataset.candidatename;
+            const candidatevote = this.dataset.candidatevote;
+            updateVote(username, usercontact, candidatename, candidatevote);
+        });
+    });
+
+        function updateVote(username, usercontact, candidatename, candidatevote) {
+            axios.post('/updateVote', {
+                username,
+                usercontact,
+                candidatename
+            })
+            .then(function (response) {
+                console.log(response.data);
+                location.reload();
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
+        }
+    </script>
+
+</html>

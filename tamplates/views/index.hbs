@@ -1,0 +1,882 @@
+<!DOCTYPE html>
+<html lang="en">
+{{!-- <style>
+    body {
+        overflow: hidden;
+    }
+</style> --}}
+
+<style>
+    body {
+        margin-top: 20px;
+        background: #eee;
+    }
+
+    .service-container {
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-container .icon {
+        margin-top: 5%;
+        font-size: 38px;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-container .number-icon .icon-2 {
+        height: 70px;
+        width: 70px;
+        line-height: 80px;
+        border-radius: 64% 36% 55% 45% / 76% 72% 28% 24% !important;
+        border-color: #f89d36 !important;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-container .number-icon .icon-2 i {
+        font-size: 30px;
+    }
+
+    .service-container .number-icon .number {
+        position: absolute;
+        top: 0;
+        right: 70px;
+        left: 0;
+        height: 35px;
+        width: 35px;
+        margin: 0 auto;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-container .number-icon .number span {
+        line-height: 30px;
+    }
+
+    .service-container .content .number {
+        font-size: 40px;
+        color: #dee2e6;
+    }
+
+    .service-container .content .title {
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-container.hover-bg {
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-container.hover-bg .smooth-icon {
+        position: absolute;
+        bottom: -40px;
+        right: -20px;
+        font-size: 60px;
+        color: #f8f9fa;
+        -webkit-transition: all 0.8s ease;
+        transition: all 0.8s ease;
+    }
+
+    .service-container.hover-bg:hover {
+        background-color: #f89d36;
+    }
+
+    .service-container.hover-bg:hover .content .title {
+        color: #ffffff !important;
+    }
+
+    .service-container.hover-bg:hover .content .serv-pera {
+        color: #fafafb !important;
+    }
+
+    .service-container.hover-bg:hover .smooth-icon {
+        font-size: 100px;
+        opacity: 0.2;
+        bottom: -20px;
+        right: 10px;
+    }
+
+    .service-container:hover {
+        background-color: #ffffff;
+        -webkit-box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
+        box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
+    }
+
+    .service-container:hover .icon {
+        color: #f89d36;
+        -webkit-animation: mover 1s infinite alternate;
+        animation: mover 1s infinite alternate;
+    }
+
+    .service-container:hover .number-icon .icon-2 {
+        background-color: #f89d36;
+        border-radius: 50% !important;
+    }
+
+    .service-container:hover .number-icon .icon-2 i {
+        color: #ffffff !important;
+    }
+
+    .service-container:hover .number-icon .number {
+        color: #ffffff;
+        background: #f89d36 !important;
+        border-color: #ffffff !important;
+    }
+
+    .service-container:hover .content .title {
+        color: #f89d36;
+    }
+
+    .service-container a:hover,
+    .service-container a .title:hover {
+        color: #f89d36 !important;
+    }
+
+    @-webkit-keyframes mover {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        100% {
+            -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+        }
+    }
+
+    @keyframes mover {
+        0% {
+            -webkit-transform: translateY(0);
+            transform: translateY(0);
+        }
+
+        100% {
+            -webkit-transform: translateY(-15px);
+            transform: translateY(-15px);
+        }
+    }
+
+    .service-wrapper {
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-wrapper .icon {
+        width: 60px;
+        height: 60px;
+        line-height: 45px;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-wrapper .content .title {
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+        font-weight: 500;
+    }
+
+    .service-wrapper .big-icon {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        opacity: 0.05;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    .service-wrapper:hover {
+        -webkit-box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
+        box-shadow: 0 10px 25px rgba(47, 60, 78, 0.15) !important;
+        background: #ffffff;
+        -webkit-transform: translateY(-8px);
+        transform: translateY(-8px);
+        border-color: transparent !important;
+    }
+
+    .service-wrapper:hover .icon {
+        background: #0062ff !important;
+        color: #ffffff !important;
+    }
+
+    .service-wrapper:hover .big-icon {
+        z-index: -1;
+        opacity: 0.1;
+        font-size: 160px;
+    }
+
+    .text-custom {
+        color: #0062ff !important;
+    }
+
+    .uim-svg {
+        display: inline-block;
+        height: 1em;
+        vertical-align: -0.125em;
+        font-size: inherit;
+        fill: var(--uim-color, currentColor);
+    }
+</style>
+{{>header}}
+
+<body>
+
+    {{>navbar}}
+    <main>
+
+
+        <section class="hero-section" id="section_1">
+            <div class="section-overlay"></div>
+
+            <div class="container d-flex justify-content-center align-items-center">
+                <div class="row">
+
+                    <div class="col-12 mt-auto mb-5 text-center">
+                        <small>ONLINE VOTING SYSTEM</small>
+
+                        <h3 class="text-white mb-5">"Unleash the Power of Your Vote, Online and Secure!"</h3>
+
+                        <a class="btn custom-btn smoothscroll"
+                            href="https://en.wikipedia.org/wiki/Electronic_voting" style="color: white;">Read More</a>
+                    </div>
+
+                    <div class="col-lg-12 col-12 mt-auto d-flex flex-column flex-lg-row text-center">
+                        <div class="date-wrap">
+                            <h6 class="text-white">
+                                <i class="custom-icon bi-clock me-2"></i>
+                                10 <sup>th</sup> Feb 2022 - 10 <sup>th</sup> Jan 2023
+                            </h6>
+                        </div>
+
+                        <div class="location-wrap mx-auto py-3 py-lg-0">
+                            <h6 class="text-white">
+                                <i class="custom-icon bi-geo-alt me-2"></i>
+                                ABES Engineering College, Ghaziabad - Uttar Pradesh
+                            </h6>
+                        </div>
+
+                        <div class="social-share">
+                            <ul class="social-icon d-flex align-items-center justify-content-center">
+                                <span class="text-white me-3">Share:</span>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-facebook"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-twitter"></span>
+                                    </a>
+                                </li>
+
+                                <li class="social-icon-item">
+                                    <a href="#" class="social-icon-link">
+                                        <span class="bi-instagram"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="video-wrap">
+                <video autoplay="" loop="" muted="" class="custom-video" poster="">
+                    <source src="video/video (2160p).mp4" type="video/mp4">
+
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </section>
+
+
+        <section class="about-section section-padding" id="section_2">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-12 mb-4 mb-lg-0 d-flex align-items-center">
+                        <div class="services-info">
+                            <h2 class="text-white mb-4">About Online Voting</h2>
+
+                            <p class="text-white">An online voting system is a technologically advanced platform that
+                                enables eligible individuals to cast their votes securely and conveniently through the
+                                internet. These systems eliminate the need for physical polling stations and traditional
+                                paper ballots, allowing voters to participate remotely. </p>
+
+                            <h6 class="text-white mt-4">Benefits using Online voting mechanism</h6>
+
+                            <p class="text-white">Electronic voting technology intends to speed the counting of ballots,
+                                reduce the cost of paying staff to count votes manually and can provide improved
+                                accessibility for disabled voters.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 col-12">
+                        <div class="about-text-wrap">
+                            <img src="images/firmbee-com-SpVHcbuKi6E-unsplash.jpg" class="about-image img-fluid">
+
+                            <div class="about-text-info d-flex">
+                                <div class="d-flex">
+                                    <i class="about-text-icon bi-person"></i>
+                                </div>
+
+
+                                <div class="ms-4">
+                                    <h4>Vote for a Better Future</h4>
+
+                                    <p class="mb-0">shape your destiny, vote with pride</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+
+        <section class="artists-section section-padding" id="section_3">
+            <div class="container">
+                <div class="row justify-content-center">
+
+                    <div class="col-12 text-center">
+                        <h2 class="mb-4">Team Members</h1>
+                    </div>
+
+                    <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="images/artists/yash pic.jpg" class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Name:</strong>
+                                    Yash Bansal
+                                </p>
+
+                                <p>
+                                    <strong>Birthdate:</strong>
+                                    January 6, 2001
+                                </p>
+
+                                <p>
+                                    <strong>Email:</strong>
+                                    <a href="yashbansal81003@gmail.com">Yash@gmail</a>
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Linkedin:</strong>
+                                    <a href="https://www.linkedin.com/in/yash-bansal-092926202/">Yash Linkedin</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-5 col-12">
+                        <div class="artists-thumb">
+                            <div class="artists-image-wrap">
+                                <img src="images/artists/sejal pic.jpg" class="artists-image img-fluid">
+                            </div>
+
+                            <div class="artists-hover">
+                                <p>
+                                    <strong>Name:</strong>
+                                    Sejal Garg
+                                </p>
+
+                                <p>
+                                    <strong>Birthdate:</strong>
+                                    June 13, 2001
+                                </p>
+
+                                <p>
+                                    <strong>Email:</strong>
+                                    <a href="sejalgarg1306@gmail.com">Sejal@gmail</a>
+                                </p>
+
+                                <hr>
+
+                                <p class="mb-0">
+                                    <strong>Linkedin:</strong>
+                                    <a href="https://www.linkedin.com/in/sejal-garg-030366235/">Sejal Linkedin</a>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <section class="pricing-section section-padding section-bg" id="section_5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-12">
+                        <div class="section-title text-center mb-4 pb-2">
+                            <h4 class="title mb-4">Our Features</h4>
+                            <p class="text-muted para-desc mx-auto mb-0">"Empower democracy with a click: Revolutionize
+                                your voting experience with our secure and accessible online platform."</p>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+
+                <div class="row">
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card service-wrapper rounded border-0 shadow p-4">
+                            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <rect width="20" height="15" x="2" y="3" class="uim-tertiary" rx="3"></rect>
+                                        <path class="uim-primary"
+                                            d="M16,21H8a.99992.99992,0,0,1-.832-1.55469l4-6a1.03785,1.03785,0,0,1,1.66406,0l4,6A.99992.99992,0,0,1,16,21Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                            <div class="content mt-4">
+                                <h5 class="title">Fully Responsive</h5>
+                                <p class="text-muted mt-3 mb-0">Our fully responsive online voting system brings the
+                                    voting booth to your fingertips, Whether you're on your smartphone, tablet, or
+                                    computer, our platform seamlessly adjusts to fit your screen, delivering a
+                                    user-friendly and accessible voting experience.</p>
+
+                            </div>
+                            <div class="big-icon h1 text-custom">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <rect width="20" height="15" x="2" y="3" class="uim-tertiary" rx="3"></rect>
+                                        <path class="uim-primary"
+                                            d="M16,21H8a.99992.99992,0,0,1-.832-1.55469l4-6a1.03785,1.03785,0,0,1,1.66406,0l4,6A.99992.99992,0,0,1,16,21Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card service-wrapper rounded border-0 shadow p-4">
+                            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-quaternary"
+                                            d="M15,2c-3.3772,0.00142-6.27155,2.41462-6.88025,5.73651c2.90693-1.59074,6.553-0.52375,8.14374,2.38317c0.98206,1.79462,0.98206,3.96594,0,5.76057c3.8013-0.69634,6.31837-4.3424,5.62202-8.14369C21.27662,4.41261,18.37925,1.99872,15,2z">
+                                        </path>
+                                        <circle cx="7" cy="17" r="5" class="uim-primary"></circle>
+                                        <path class="uim-tertiary"
+                                            d="M11,7c-3.08339,0.00031-5.66461,2.33759-5.97,5.40582c2.5358-1.08949,5.47469,0.08297,6.56418,2.61877c0.54113,1.25947,0.54113,2.68593,0,3.94541c3.29729-0.32786,5.7045-3.26663,5.37664-6.56392C16.66569,9.33735,14.08386,6.99972,11,7z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                            <div class="content mt-4">
+                                <h5 class="title">Easy to Use</h5>
+                                <p class="text-muted mt-3 mb-0">Our online voting system boasts a user-friendly
+                                    interface, designed with simplicity in mind. Our platform guides you through the
+                                    process step-by-step,
+                                    eliminating any confusion or complexity. Say goodbye to cumbersome
+                                    paper ballots.
+                                </p>
+
+                            </div>
+                            <div class="big-icon h1 text-custom">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        enable-background="new 0 0 24 24" viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-quaternary"
+                                            d="M15,2c-3.3772,0.00142-6.27155,2.41462-6.88025,5.73651c2.90693-1.59074,6.553-0.52375,8.14374,2.38317c0.98206,1.79462,0.98206,3.96594,0,5.76057c3.8013-0.69634,6.31837-4.3424,5.62202-8.14369C21.27662,4.41261,18.37925,1.99872,15,2z">
+                                        </path>
+                                        <circle cx="7" cy="17" r="5" class="uim-primary"></circle>
+                                        <path class="uim-tertiary"
+                                            d="M11,7c-3.08339,0.00031-5.66461,2.33759-5.97,5.40582c2.5358-1.08949,5.47469,0.08297,6.56418,2.61877c0.54113,1.25947,0.54113,2.68593,0,3.94541c3.29729-0.32786,5.7045-3.26663,5.37664-6.56392C16.66569,9.33735,14.08386,6.99972,11,7z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card service-wrapper rounded border-0 shadow p-4">
+                            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-quaternary"
+                                            d="M6,23H2a.99974.99974,0,0,1-1-1V16a.99974.99974,0,0,1,1-1H6a.99974.99974,0,0,1,1,1v6A.99974.99974,0,0,1,6,23Z">
+                                        </path>
+                                        <path class="uim-tertiary"
+                                            d="M14,23H10a.99974.99974,0,0,1-1-1V10a.99974.99974,0,0,1,1-1h4a.99974.99974,0,0,1,1,1V22A.99974.99974,0,0,1,14,23Z">
+                                        </path>
+                                        <path class="uim-primary"
+                                            d="M22,23H18a.99974.99974,0,0,1-1-1V2a.99974.99974,0,0,1,1-1h4a.99974.99974,0,0,1,1,1V22A.99974.99974,0,0,1,22,23Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                            <div class="content mt-4">
+                                <h5 class="title">Real-time Results</h5>
+                                <p class="text-muted mt-3 mb-0"> Say goodbye to long waiting periods. Our online voting
+                                    system provides real-time vote counting and results, offering immediate visibility
+                                    into the election outcome. This enables faster decision-making and enhances the
+                                    overall efficiency of the voting process.</p>
+
+                            </div>
+                            <div class="big-icon h1 text-custom">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-quaternary"
+                                            d="M6,23H2a.99974.99974,0,0,1-1-1V16a.99974.99974,0,0,1,1-1H6a.99974.99974,0,0,1,1,1v6A.99974.99974,0,0,1,6,23Z">
+                                        </path>
+                                        <path class="uim-tertiary"
+                                            d="M14,23H10a.99974.99974,0,0,1-1-1V10a.99974.99974,0,0,1,1-1h4a.99974.99974,0,0,1,1,1V22A.99974.99974,0,0,1,14,23Z">
+                                        </path>
+                                        <path class="uim-primary"
+                                            d="M22,23H18a.99974.99974,0,0,1-1-1V2a.99974.99974,0,0,1,1-1h4a.99974.99974,0,0,1,1,1V22A.99974.99974,0,0,1,22,23Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card service-wrapper rounded border-0 shadow p-4">
+                            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-tertiary"
+                                            d="M20 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.02883 1.02883 0 0 1 19.29 9.29a1.04667 1.04667 0 0 1 1.41992 0 1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 20 11zM19 6.5a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 19 6.5zM20 4a.98979.98979 0 0 1-.91992-1.37988A1.02883 1.02883 0 0 1 19.29 2.29a1.04669 1.04669 0 0 1 1.41992 0 1.02883 1.02883 0 0 1 .21.33008A.98919.98919 0 0 1 20.71 3.71a1.16044 1.16044 0 0 1-.33008.21A.9994.9994 0 0 1 20 4zM7.03027 6.24023a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 8 7H8A.99122.99122 0 0 1 7.03027 6.24023zm4-1a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 12 6h0A1.00294 1.00294 0 0 1 11.03027 5.24023zm4-1a.99816.99816 0 0 1 .7295-1.21h0a1.00272 1.00272 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 16 5h0A.99122.99122 0 0 1 15.03027 4.24023zM4 8A.99042.99042 0 0 1 3 7a.83154.83154 0 0 1 .08008-.37988A1.02883 1.02883 0 0 1 3.29 6.29 1.04669 1.04669 0 0 1 4.71 6.29a1.02883 1.02883 0 0 1 .21.33008A.99013.99013 0 0 1 4 8zM4 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.14718 1.14718 0 0 1 3.29 9.29 1.04667 1.04667 0 0 1 4.71 9.29a1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 4 11zM15 10a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 15 10zm-4 0a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 11 10zM7 10A1.0032 1.0032 0 0 1 8 9H8a1.0032 1.0032 0 0 1 1 1H9a1.0032 1.0032 0 0 1-1 1H8A1.0032 1.0032 0 0 1 7 10z">
+                                        </path>
+                                        <polygon class="uim-primary" points="20 14 20 21 4 17 4 14 20 14"></polygon>
+                                        <path class="uim-primary"
+                                            d="M20,22a.97427.97427,0,0,1-.24219-.03027l-16-4A.99961.99961,0,0,1,3,17V14a.99943.99943,0,0,1,1-1H20a.99943.99943,0,0,1,1,1v7a1.0005,1.0005,0,0,1-1,1ZM5,16.21875l14,3.5V15H5Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                            <div class="content mt-4">
+                                <h5 class="title">Mobile App Compatibility</h5>
+                                <p class="text-muted mt-3 mb-0">Our online voting system offers compatibility with
+                                    mobile applications, providing voters with the convenience of accessing and casting
+                                    their votes through dedicated mobile apps. This enhances the flexibility and
+                                    accessibility of the voting process. </p>
+
+                            </div>
+                            <div class="big-icon h1 text-custom">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-tertiary"
+                                            d="M20 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.02883 1.02883 0 0 1 19.29 9.29a1.04667 1.04667 0 0 1 1.41992 0 1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 20 11zM19 6.5a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 19 6.5zM20 4a.98979.98979 0 0 1-.91992-1.37988A1.02883 1.02883 0 0 1 19.29 2.29a1.04669 1.04669 0 0 1 1.41992 0 1.02883 1.02883 0 0 1 .21.33008A.98919.98919 0 0 1 20.71 3.71a1.16044 1.16044 0 0 1-.33008.21A.9994.9994 0 0 1 20 4zM7.03027 6.24023a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 8 7H8A.99122.99122 0 0 1 7.03027 6.24023zm4-1a.99364.99364 0 0 1 .7295-1.21h0a.9907.9907 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 12 6h0A1.00294 1.00294 0 0 1 11.03027 5.24023zm4-1a.99816.99816 0 0 1 .7295-1.21h0a1.00272 1.00272 0 0 1 1.21.7295h0a.99891.99891 0 0 1-.7295 1.21h0A.96451.96451 0 0 1 16 5h0A.99122.99122 0 0 1 15.03027 4.24023zM4 8A.99042.99042 0 0 1 3 7a.83154.83154 0 0 1 .08008-.37988A1.02883 1.02883 0 0 1 3.29 6.29 1.04669 1.04669 0 0 1 4.71 6.29a1.02883 1.02883 0 0 1 .21.33008A.99013.99013 0 0 1 4 8zM4 11a.99018.99018 0 0 1-.71-.29 1.16044 1.16044 0 0 1-.21-.33008.94107.94107 0 0 1 0-.75976A1.14718 1.14718 0 0 1 3.29 9.29 1.04667 1.04667 0 0 1 4.71 9.29a1.14718 1.14718 0 0 1 .21.33008.94107.94107 0 0 1 0 .75976 1.16044 1.16044 0 0 1-.21.33008A.99349.99349 0 0 1 4 11zM15 10a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 15 10zm-4 0a1.0032 1.0032 0 0 1 1-1h0a1.0032 1.0032 0 0 1 1 1h0a1.0032 1.0032 0 0 1-1 1h0A1.0032 1.0032 0 0 1 11 10zM7 10A1.0032 1.0032 0 0 1 8 9H8a1.0032 1.0032 0 0 1 1 1H9a1.0032 1.0032 0 0 1-1 1H8A1.0032 1.0032 0 0 1 7 10z">
+                                        </path>
+                                        <polygon class="uim-primary" points="20 14 20 21 4 17 4 14 20 14"></polygon>
+                                        <path class="uim-primary"
+                                            d="M20,22a.97427.97427,0,0,1-.24219-.03027l-16-4A.99961.99961,0,0,1,3,17V14a.99943.99943,0,0,1,1-1H20a.99943.99943,0,0,1,1,1v7a1.0005,1.0005,0,0,1-1,1ZM5,16.21875l14,3.5V15H5Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card service-wrapper rounded border-0 shadow p-4">
+                            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-quaternary"
+                                            d="M12,22a.99974.99974,0,0,1-1-1V3a1,1,0,0,1,2,0V21A.99974.99974,0,0,1,12,22Z">
+                                        </path>
+                                        <polygon class="uim-primary" points="21 12 16 7 16 17 21 12"></polygon>
+                                        <path class="uim-primary"
+                                            d="M16,18a1,1,0,0,1-1-1V7a.99991.99991,0,0,1,1.707-.707l5,5a.99962.99962,0,0,1,0,1.41406l-5,5A.99893.99893,0,0,1,16,18Zm1-8.58594v5.17188L19.58594,12Z">
+                                        </path>
+                                        <path class="uim-tertiary"
+                                            d="M3 13a.99075.99075 0 0 1-.92041-1.37988A1.14883 1.14883 0 0 1 2.29 11.29a1.04669 1.04669 0 0 1 1.41992 0 1.03724 1.03724 0 0 1 .21.33008A.83792.83792 0 0 1 4 12a.99042.99042 0 0 1-1 1zM4.79 15.21a1.00761 1.00761 0 0 1 0-1.41992h0a1.00671 1.00671 0 0 1 1.41992 0h0a1.0085 1.0085 0 0 1 0 1.41992h0a1.02749 1.02749 0 0 1-.71.29h0A1.02577 1.02577 0 0 1 4.79 15.21zM8 18a.99183.99183 0 0 1-.71-.29 1.16213 1.16213 0 0 1-.21045-.33008A.99906.99906 0 0 1 7 17a1.05 1.05 0 0 1 .29-.71 1.0387 1.0387 0 0 1 1.08984-.21 1.15384 1.15384 0 0 1 .33008.21A1.05232 1.05232 0 0 1 9 17a.9994.9994 0 0 1-.08008.37988 1.17124 1.17124 0 0 1-.21.33008A.99183.99183 0 0 1 8 18zM7 13.66992a.996.996 0 0 1 1-1H8a.99632.99632 0 0 1 1 1H9a1.00319 1.00319 0 0 1-1 1H8A1.00288 1.00288 0 0 1 7 13.66992zm0-3.33984a1.00288 1.00288 0 0 1 1-1H8a1.00319 1.00319 0 0 1 1 1H9a.99693.99693 0 0 1-1 1H8A.99663.99663 0 0 1 7 10.33008zM8 8a.99075.99075 0 0 1-.92041-1.37988A1.03011 1.03011 0 0 1 7.29 6.29a.98544.98544 0 0 1 1.62988.33008A.99013.99013 0 0 1 8 8zM4.79 10.21A1.00761 1.00761 0 0 1 4.79 8.79h0A1.00671 1.00671 0 0 1 6.21 8.79h0a1.0085 1.0085 0 0 1 0 1.41992h0a1.02749 1.02749 0 0 1-.71.29h0A1.02577 1.02577 0 0 1 4.79 10.21z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                            <div class="content mt-4">
+                                <h5 class="title">Voter Verification using OTP</h5>
+                                <p class="text-muted mt-3 mb-0">Upon registration voters receive a unique OTP
+                                    through an SMS. This OTP serves as a temporary
+                                    authentication code that verifies the voter. By entering the correct
+                                    OTP, voters validate to cast a vote, ensuring each vote associated with a legitimate
+                                    voter. </p>
+
+                            </div>
+                            <div class="big-icon h1 text-custom">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-quaternary"
+                                            d="M12,22a.99974.99974,0,0,1-1-1V3a1,1,0,0,1,2,0V21A.99974.99974,0,0,1,12,22Z">
+                                        </path>
+                                        <polygon class="uim-primary" points="21 12 16 7 16 17 21 12"></polygon>
+                                        <path class="uim-primary"
+                                            d="M16,18a1,1,0,0,1-1-1V7a.99991.99991,0,0,1,1.707-.707l5,5a.99962.99962,0,0,1,0,1.41406l-5,5A.99893.99893,0,0,1,16,18Zm1-8.58594v5.17188L19.58594,12Z">
+                                        </path>
+                                        <path class="uim-tertiary"
+                                            d="M3 13a.99075.99075 0 0 1-.92041-1.37988A1.14883 1.14883 0 0 1 2.29 11.29a1.04669 1.04669 0 0 1 1.41992 0 1.03724 1.03724 0 0 1 .21.33008A.83792.83792 0 0 1 4 12a.99042.99042 0 0 1-1 1zM4.79 15.21a1.00761 1.00761 0 0 1 0-1.41992h0a1.00671 1.00671 0 0 1 1.41992 0h0a1.0085 1.0085 0 0 1 0 1.41992h0a1.02749 1.02749 0 0 1-.71.29h0A1.02577 1.02577 0 0 1 4.79 15.21zM8 18a.99183.99183 0 0 1-.71-.29 1.16213 1.16213 0 0 1-.21045-.33008A.99906.99906 0 0 1 7 17a1.05 1.05 0 0 1 .29-.71 1.0387 1.0387 0 0 1 1.08984-.21 1.15384 1.15384 0 0 1 .33008.21A1.05232 1.05232 0 0 1 9 17a.9994.9994 0 0 1-.08008.37988 1.17124 1.17124 0 0 1-.21.33008A.99183.99183 0 0 1 8 18zM7 13.66992a.996.996 0 0 1 1-1H8a.99632.99632 0 0 1 1 1H9a1.00319 1.00319 0 0 1-1 1H8A1.00288 1.00288 0 0 1 7 13.66992zm0-3.33984a1.00288 1.00288 0 0 1 1-1H8a1.00319 1.00319 0 0 1 1 1H9a.99693.99693 0 0 1-1 1H8A.99663.99663 0 0 1 7 10.33008zM8 8a.99075.99075 0 0 1-.92041-1.37988A1.03011 1.03011 0 0 1 7.29 6.29a.98544.98544 0 0 1 1.62988.33008A.99013.99013 0 0 1 8 8zM4.79 10.21A1.00761 1.00761 0 0 1 4.79 8.79h0A1.00671 1.00671 0 0 1 6.21 8.79h0a1.0085 1.0085 0 0 1 0 1.41992h0a1.02749 1.02749 0 0 1-.71.29h0A1.02577 1.02577 0 0 1 4.79 10.21z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+
+                    <div class="col-lg-4 col-md-6 col-12 mt-4 pt-2">
+                        <div class="card service-wrapper rounded border-0 shadow p-4">
+                            <div class="icon text-center text-custom h1 shadow rounded bg-white">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-primary"
+                                            d="M12,6a.99974.99974,0,0,1,1,1v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12V7A.99974.99974,0,0,1,12,6Z">
+                                        </path>
+                                        <path class="uim-tertiary"
+                                            d="M2,12A10,10,0,1,0,12,2,10,10,0,0,0,2,12Zm9-5a1,1,0,0,1,2,0v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                            <div class="content mt-4">
+                                <h5 class="title">Support 24/7</h5>
+                                <p class="text-muted mt-3 mb-0">Our dedicated support team is always ready to address
+                                    your queries, troubleshoot any issues, and provide guidance, guaranteeing a seamless
+                                    and worry-free voting experience at any hour with our reliable and responsive
+                                    support.</p>
+
+                            </div>
+                            <div class="big-icon h1 text-custom">
+                                <span class="uim-svg" style=""><svg xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 24 24" width="1em">
+                                        <path class="uim-primary"
+                                            d="M12,6a.99974.99974,0,0,1,1,1v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12V7A.99974.99974,0,0,1,12,6Z">
+                                        </path>
+                                        <path class="uim-tertiary"
+                                            d="M2,12A10,10,0,1,0,12,2,10,10,0,0,0,2,12Zm9-5a1,1,0,0,1,2,0v4.42249l2.09766,1.2113a1.00016,1.00016,0,0,1-1,1.73242l-2.59766-1.5A1.00455,1.00455,0,0,1,11,12Z">
+                                        </path>
+                                    </svg></span>
+                            </div>
+                        </div>
+                    </div><!--end col-->
+                </div><!--end row-->
+            </div>
+        </section>
+
+        <section class="contact-section section-padding" id="section_6">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-8 col-12 mx-auto">
+                        <h2 class="text-center mb-4">Contact Us</h2>
+
+                        <nav class="d-flex justify-content-center">
+                            <div class="nav nav-tabs align-items-baseline justify-content-center" id="nav-tab"
+                                role="tablist">
+                                <button class="nav-link active" id="nav-ContactForm-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactForm" type="button" role="tab"
+                                    aria-controls="nav-ContactForm" aria-selected="false">
+                                    <h5>Contact Form</h5>
+                                </button>
+
+                                <button class="nav-link" id="nav-ContactMap-tab" data-bs-toggle="tab"
+                                    data-bs-target="#nav-ContactMap" type="button" role="tab"
+                                    aria-controls="nav-ContactMap" aria-selected="false">
+                                    <h5>Google Maps</h5>
+                                </button>
+                            </div>
+                        </nav>
+
+                        <div class="tab-content shadow-lg mt-5" id="nav-tabContent">
+                            <div class="tab-pane fade show active" id="nav-ContactForm" role="tabpanel"
+                                aria-labelledby="nav-ContactForm-tab">
+                                <form class="custom-form contact-form mb-5 mb-lg-0" action="#" method="post"
+                                    role="form">
+                                    <div class="contact-form-body">
+                                        <div class="row">
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="text" name="contact-name" id="contact-name"
+                                                    class="form-control" placeholder="Full name" required>
+                                            </div>
+
+                                            <div class="col-lg-6 col-md-6 col-12">
+                                                <input type="email" name="contact-email" id="contact-email"
+                                                    pattern="[^ @]*@[^ @]*" class="form-control"
+                                                    placeholder="Email address" required>
+                                            </div>
+                                        </div>
+
+                                        <input type="text" name="contact-company" id="contact-company"
+                                            class="form-control" placeholder="Company" required>
+
+                                        <textarea name="contact-message" rows="3" class="form-control"
+                                            id="contact-message" placeholder="Message"></textarea>
+
+                                        <div class="col-lg-4 col-md-10 col-8 mx-auto">
+                                            <button type="submit" class="form-control">Send message</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+
+                            <div class="tab-pane fade" id="nav-ContactMap" role="tabpanel"
+                                aria-labelledby="nav-ContactMap-tab">
+                                <iframe class="google-map"
+                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d29974.469402870927!2d120.94861466021855!3d14.106066818082482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x33bd777b1ab54c8f%3A0x6ecc514451ce2be8!2sTagaytay%2C%20Cavite%2C%20Philippines!5e1!3m2!1sen!2smy!4v1670344209509!5m2!1sen!2smy"
+                                    width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
+                                <!-- You can easily copy the embed code from Google Maps -> Share -> Embed a map // -->
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+    <footer class="site-footer">
+        <div class="site-footer-top">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-6 col-8">
+                        <h4 class="text-white mb-lg-0">Online Voting System</h4>
+                    </div>
+
+                    <div class="col-lg-6 col-12 d-flex justify-content-lg-end align-items-center">
+                        <ul class="social-icon d-flex justify-content-lg-end">
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-twitter"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-apple"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-instagram"></span>
+                                </a>
+                            </li>
+
+                            <li class="social-icon-item">
+                                <a href="#" class="social-icon-link">
+                                    <span class="bi-youtube"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-6 col-12 mb-4 pb-2">
+                    <h5 class="site-footer-title mb-3">Links</h5>
+
+                    <ul class="site-footer-links">
+                        <li class="site-footer-link-item">
+                            <a href="index" class="site-footer-link">Home</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_2" class="site-footer-link">About</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_3" class="site-footer-link">Team Members</a>
+                        </li>
+
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_5" class="site-footer-link">Features</a>
+                        </li>
+
+                        <li class="site-footer-link-item">
+                            <a href="#section_6" class="site-footer-link">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0">
+                    <h5 class="site-footer-title mb-3">Have a question?</h5>
+
+                    <p class="text-white d-flex mb-1">
+                        <a href="tel: 090-080-0760" class="site-footer-link">
+                            +91 98XXX-XXX-XX
+                        </a>
+                    </p>
+
+                    <p class="text-white d-flex">
+                        <a href="mailto:hello@company.com" class="site-footer-link">
+                            onlinevoting@company.com
+                        </a>
+                    </p>
+                </div>
+
+                <div class="col-lg-3 col-md-6 col-11 mb-4 mb-lg-0 mb-md-0">
+                    <h5 class="site-footer-title mb-3">Location</h5>
+
+                    <p class="text-white d-flex mt-3 mb-2">
+                        ABES Engineering College, Ghaziabad - Uttar Pradesh</p>
+
+                    <a class="link-fx-1 color-contrast-higher mt-3" href="#">
+                        <span>Our Maps</span>
+                        <svg class="icon" viewBox="0 0 32 32" aria-hidden="true">
+                            <g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="16" cy="16" r="15.5"></circle>
+                                <line x1="10" y1="18" x2="16" y2="12"></line>
+                                <line x1="16" y1="12" x2="22" y2="18"></line>
+                            </g>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div class="site-footer-bottom">
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-lg-3 col-12 mt-5">
+                        <p class="copyright-text">Copyright © Online voting system</p>
+                    </div>
+
+                    <div class="col-lg-8 col-12 mt-lg-5">
+                        <ul class="site-footer-links">
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Terms &amp; Conditions</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Privacy Policy</a>
+                            </li>
+
+                            <li class="site-footer-link-item">
+                                <a href="#" class="site-footer-link">Your Feedback</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!--
+
+T e m p l a t e M o
+
+-->
+
+    <!-- JAVASCRIPT FILES -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/click-scroll.js"></script>
+    <script src="js/custom.js"></script>
+
+</body>
+
+</html>

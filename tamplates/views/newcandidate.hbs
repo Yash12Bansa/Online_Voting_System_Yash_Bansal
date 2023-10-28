@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+{{>header}}
+<style>
+  body{
+    overflow: hidden;
+  }
+</style>
+<body>
+    {{>navbar}}
+    <br>
+    <h2 class="reg-head"> Add New Candidate</h2>
+    
+   <form name="myCand" class="row g-3 reg-form" method="POST" action="newcandidate">
+    
+  <div class="col-md-12">
+    <label for="logo" class="form-label">Logo</label>
+    <input type="file" class="form-control" name = "logo"  accept="image/*" id="logo">
+  </div>
+  <div class="col-md-12">
+    <label for="name" class="form-label">Name</label>
+    <input type="text" class="form-control" name = "name" id="name">
+  </div>
+  <div class="col-md-12">
+    <label for="contact" class="form-label">Contact number</label>
+    <input type="number" class="form-control" name="contact"  id="contact">
+  </div>
+  <div class="col-md-12">
+    <label for="aadharcard" class="form-label">Aadhar Card Number</label>
+    <input type="number" class="form-control" name = "aadhar" id="aadharcard">
+  </div>
+  <div class="col-12">
+    <button style="margin-left: 150px;" type="submit" class="btn btn-primary btn-lg">Submit</button>
+    <input style="margin-left: 70px;" class="btn btn-primary btn-lg" type="reset" value="Reset">
+  </div>
+  
+</form>
+    
+</body>
+</html>

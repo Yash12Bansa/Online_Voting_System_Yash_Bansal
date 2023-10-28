@@ -1,0 +1,303 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Ubuntu&display=swap');
+*{
+    padding: 0;
+    margin: 0;
+}
+
+
+
+/* CSS for general styling */
+
+.cube {
+	width: 200px;
+	height: 200px;
+	position: relative;
+	transform-style: preserve-3d;
+	animation: rotate 10s linear infinite;
+}
+
+img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.box {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+	opacity: 0.9;
+}
+
+/* Applying styles to each face */
+.box1 {
+	transform: translateZ(100px);
+}
+
+.box2 {
+	transform: rotateY(90deg) translateX(100px);
+	transform-origin: right;
+}
+
+.box3 {
+	transform: rotateY(180deg) translateZ(100px);
+}
+
+.box4 {
+	transform: rotateY(-90deg) translateX(-100px);
+	transform-origin: left;
+}
+
+.box5 {
+	transform: rotateX(-90deg) translateY(-100px);
+	transform-origin: top;
+}
+
+.box6 {
+	transform: rotateX(90deg) translateY(100px);
+	transform-origin: bottom;
+}
+
+/* Animating the elements */
+@keyframes rotate {
+	0%,
+	100% {
+		transform: rotate(0deg);
+	}
+	20% {
+		transform: rotateY(90deg) rotateZ(90deg);
+	}
+	40% {
+		transform: rotateY(180deg) rotateZ(-90deg);
+	}
+	60% {
+		transform: rotateY(270deg) rotateZ(90deg);
+	}
+	80% {
+		transform: rotateY(360deg) rotateZ(-90deg);
+	}
+}
+
+
+
+.background{
+    background-color: grey;
+    background-image: url("/upload/pexels-james-wheeler-1519088.jpg");
+    background-size: cover;
+    background-blend-mode:darken;
+
+}  
+.firstsection{
+    height: 100vh;
+}
+.box-main{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    background-blend-mode: darken;
+    color: white;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    max-width: 40%;
+    margin: auto;
+    height: 50%;
+
+}
+
+.firsthalf{
+    
+    width: 75%;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+}
+.secondhalf{
+    width: 30%;
+
+}
+.secondhalf img{
+    width: 115%;
+    border: 4px solid white;
+    border-radius: 200px;
+    display: auto;
+    margin:auto;
+    padding: auto;
+
+}
+.thumbnail img{
+    border: 3px solid black;
+    border-radius:70px ;
+    margin: top;
+    width: 450px;
+}
+.text-big{
+    font-size: 41px;
+
+}
+.text-small{
+    font-size: 20px;
+
+}
+
+.secright{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: auto;
+    font-family: 'Festive', cursive;
+    font-family: 'Ubuntu', sans-serif;
+}
+.secleft{
+    height: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    max-width: 80%;
+    margin: auto;
+    flex-direction: row-reverse;
+    font-family: 'Festive', cursive;
+font-family: 'Ubuntu', sans-serif;
+}
+.para{
+    padding: 0px 65px;
+}
+.sectionsubtag{
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+.slider{
+    position: relative;
+    width: 900px;
+    height: 140px;
+    transform-style: preserve-3d;
+    animation: rotate 30s linear infinite;
+}
+@keyframes rotate{
+    0%{
+        tansform: perspective(2000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(2000px) rotateY(360deg);
+    }
+}
+.reg-form{
+    padding-left: 400px;
+    padding-right: 400px;
+    
+}
+.reg-head{
+    text-align: center;
+}
+.btn-otp{
+    padding-top: 30px;
+}
+.login-btn-link{
+    margin-left: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-decoration: none;
+      background-color: rgb(6, 143, 229);
+      color: white;
+      
+}
+.signup-btn-link{
+    margin-left: 5px;
+      padding-left: 10px;
+      padding-right: 10px;
+      text-decoration: none;
+      background-color:rgb(6, 143, 229);
+      color: white;
+      
+}
+.float-parent-element { 
+    width: 50%; 
+} 
+.float-child-element { 
+    float: left; 
+    width: 50%; 
+} 
+.red { 
+    background-color: red; 
+    margin-left: 50%; 
+    height: 200px; 
+    width: 200px;
+} 
+.yellow { 
+    margin-left: 50%; 
+    height: 200px; 
+    width: 200px;
+    background-color: yellow; 
+}
+.adpage{
+    text-align: center;
+    margin-top: 10px;
+    
+}
+.adminbox{
+    margin-top: 20px;
+    margin-left: 300px;
+}
+.vlist{
+
+    list-style: none;
+    padding: 25px;
+    justify-content: center;
+    
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+  }
+
+  .list-item {
+    width: 150px; /* Adjust as needed */
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: antiquewhite;
+  }
+ 
+  .head{
+    background-color: aquamarine;
+  }
+  .list-item2{
+    width: 40px; /* Adjust as needed */
+    margin: 5px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    background-color: cornflowerblue;
+  }
+  .voter-ul{
+    margin-left: 100px;
+    margin-right: 100px;
+   text-align: center;
+  }
+  .voter-heading{
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 50px;
+  }
+  .vhor{
+    float: left;
+    display: grid;
+    list-style: none;
+    margin: 40px;
+  }
+  .errorimg{
+    margin-left: 500px;
+    height: 500px;
+    width: 500px;
+  }
+ .otppage{
+    justify-content: center;
+ }
+
+
+ /* Frontend CSS */
+
+ 
